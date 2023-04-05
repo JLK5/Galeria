@@ -70,6 +70,6 @@ div#fullScreenOverlay {
 }
 div#fullScreenOverlay img {
     max-width: 90vw;
-    max-height: 90vh;
+    max-height: 95vh;
     flex: 1;
 }
