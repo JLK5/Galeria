@@ -1,3 +1,16 @@
+function init() {
+    let imageList = document.querySelectorAll("div#thumbnailRoll img");
+for(let i = 0; i < imageList.length; i++) {
+    imageList[i].src = getRandomImageUrl();
+}
+
+document.querySelector("div#bigPicture img").src = imageList[0].src
+
+let thumbnailList = document.querySelectorAll("div#thumbnailRoll img");
+for(let i = 0; i < thumbnailList.length; i++) {
+    thumbnailList[i].addEventListener('click', thumbnailClick);
+}
+}
 function showOverlay() {
     let url = document.querySelector("div#bigPicture img").src;
     document.querySelector("div#fullScreenOverlay img").src = url;
@@ -37,13 +50,11 @@ function thumbnailClick(event) {
     let url = event.srcElement.src;
     document.querySelector("div#bigPicture img").src = url;
 }
+function getNextImageURL() {
+
+}
+window.addEventListener("load", init);
 document.getElementById("bigPicture").addEventListener("click", showOverlay);
 document.getElementById("fullScreenOverlay").addEventListener("click", hideOverlay);
-let imageList = document.getElementsByClassName("randomImage");
-for(let i = 0; i < imageList.length; i++) {
-    imageList[i].src = getRandomImageUrl();
-}
-let thumbnailList = document.querySelectorAll("div#thumbnailRoll img");
-for(let i = 0; i < thumbnailList.length; i++) {
-    thumbnailList[i].addEventListener('click', thumbnailClick);
-}
+
+
